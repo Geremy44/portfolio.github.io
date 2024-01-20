@@ -1,0 +1,373 @@
+@charset "UTF-8";
+html {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  background-color: #f5f5f5;
+  color: #616161;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke: 1px transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*
+  -------------------------------------------------------------------------------
+  #CONTAINER
+  -------------------------------------------------------------------------------
+  */
+  .container {
+    /*container properties*/
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0); }
+
+  @media (min-width: 768px) {
+    .container {
+        /*container at min width 768px*/
+        width: 750px; } }
+  @media (min-width: 992px) {
+    .container {
+        /*container at min width 992px*/
+        width: 970px; } }
+  @media (min-width: 1200px) {
+    .container {
+        /*container at min width 1200px*/
+        width: 1000px; } }
+
+  .card {
+      /*card layout*/
+      position: relative;
+      background-color: dimgray; /*couleur d'arriereplan de'une "carte"*/
+      transition: box-shadow .25s;
+      border-radius: 2px;
+      margin: 8px 0;
+      .card-content {
+        /*card content*/
+        padding: 40px;
+        border-radius: 0 0 2px 2px;
+        p {
+          /*paragraph style inside card content*/
+          margin: 0;
+          color: gainsboro;
+          text-align: center;
+        }
+      }
+  }
+
+/*=================================================*/
+/*                   HEADER                        */
+/*=================================================*/
+#home {
+
+  .header-background {
+    /*home background*/
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 370px;
+    background: url("./images/background.png") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    #v-card-holder {
+      /*card holder*/
+      position: absolute;
+      overflow: visible;
+      width: 100%;
+      height: auto;
+      top: 171px;
+
+      #v-card {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        z-index: 1;
+        margin: -20px 3px 0 0;
+
+        .info-headings {
+          /*infos*/
+          max-width: 514px;
+          h4 {
+            /*nom*/
+            display: block;
+            width: 100%;
+            font-weight: 900;
+            color: gainsboro;
+            text-shadow: silver;
+          }
+          h6 {
+            /*"sous titre"*/
+            display: block;
+            width: 100%;
+            font-weight: 900;
+            margin-top: -10px;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            color: gainsboro;
+            text-shadow: silver;
+          }
+        }
+        .infos {
+          /*contact*/
+          max-width: 515px;
+          margin-top: 99px;
+          .profile-list {
+            list-style-type: none; /*Pour ne pas afficher les puces de la liste*/
+            /*liste*/
+            .title {
+              /*Titre de kla liste (icones)*/
+              display: block;
+              float: left;
+              color: gainsboro;
+              line-height: 26px;
+              i {
+                /*dimension des icones*/
+                font-size: 23px;
+              }
+            }
+            .content {
+              /*contenu de la liste (texte)*/
+              display: block;
+              margin-left: 30px;
+              font-size: 15px;
+              font-weight: 400;
+              line-height: 20px;
+              color: gainsboro;
+            }
+          }
+        }
+
+        .links {
+          /*social links*/
+          max-width: 500px;
+          margin-left: -12px;
+          margin-top: 12px;
+          height: 100%;
+          .social {
+            /*class*/
+            margin-left: 12px;
+            margin-bottom: 4px;
+            i {
+              /*icon*/
+              font-size: 15px;
+              vertical-align: middle;
+              padding-bottom: 15px;
+            }
+          }
+
+            .social {
+              /*making links responsive*/
+              margin-left: 5px;
+            }
+          
+        }
+
+
+          .infos {
+            /*max width for infos*/
+            max-width: 278px;
+          
+          .links {
+            /*max width for links*/
+            max-width: 325px;
+          }
+          .info-headings {
+            /*max width for headings*/
+            max-width: 270px;
+          }
+        }
+
+        #profile {
+          
+          position: absolute;
+          right: 0;
+          z-index: 1;
+
+        }
+
+      }
+    }
+  }
+    .header-background #v-card-holder #v-card {
+      /*v-card at max width 767*/
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      z-index: 1;
+      top: 34px;
+      #profile {
+        /*profile v-card at max width 767*/
+        position: absolute;
+        bottom: 85%;
+        left: 0;
+        width: 150px;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        z-index: 1;
+        background-color: transparent;
+        img {
+          /*image at max width 767*/
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          box-shadow: silver;
+        }
+      }
+      .social {
+        /*links styles at max width 767*/
+        top: 0;
+        margin-left: 5px;
+        margin-bottom: 4px;
+      }
+    }
+
+    .header-background #v-card-holder #v-card {
+      .infos {
+        /*infos at max width 767*/
+        display: table;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .links {
+        /*links at max width 767*/
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto 9px;
+        #first_one {
+          /*first link at max width 767*/
+          margin-left: 0;
+        }
+      }
+
+      .info-headings {
+        /*heading at max width 767*/
+        max-width: 100%;
+        text-align: center;
+        margin-top: 38px;
+
+        h6 {
+          margin-bottom: 20px;
+        }
+      }
+      .card-content {
+        /*content padding*/
+        padding: 10px;
+      }
+    }
+  
+
+  .material-icons {
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: 'liga';
+    -moz-font-feature-settings: 'liga';
+    font-feature-settings: 'liga'
+  }
+
+  .chip i.material-icons {
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+  line-height: 32px;
+  padding-left: 8px
+  }
+
+  .breadcrumb [class*=mdi-],
+  .breadcrumb [class^=mdi-],
+  .breadcrumb i,
+  .breadcrumb i.material-icons {
+    display: inline-block;
+    direction: ltr;
+    font-size: 24px
+  }
+
+  .clearfix,
+  .toast {
+    clear: both
+  }
+
+  .section {
+      /*section properties*/
+      position: relative;
+      padding-top: 15px;
+      padding-bottom: 30px;
+      background-color: transparent;
+      .section-title {
+        /*section title*/
+        margin-bottom: 30px;
+        .title-icon {
+          /*icon*/
+          margin-right: 20px;
+        }
+      }
+    }
+
+  .logo-in {
+    display: block;
+    max-width: 10%;
+    max-height: 10%;
+    margin: auto;
+  }
+}
+/*=================================================*/
+/*                PRESENTATION                     */
+/*=================================================*/
+#page-principale {
+
+  .arriereplan{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 370px;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: transparent;
+    margin-top: 100px;
+
+    .btn-a-propos {
+      /*about buttons*/
+      height: auto;
+      margin-right: auto;
+      margin-left: auto;
+      animation-delay: 1s;
+      text-align: center;
+      .btn {
+        /*button style*/
+        margin: 20px 20px;
+        margin-right: auto;
+        margin-left: auto;
+        background: orange;
+        color: #ffffff;
+        width: 180px;
+        border-radius: 2px;
+        margin-top: 200px;
+
+        &:hover {
+         /*hover effect*/
+          background: orangered;
+        }
+      }
+    }
+  }
+
+}
