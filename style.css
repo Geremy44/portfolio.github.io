@@ -1,20 +1,6 @@
 @charset "UTF-8";
-html {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  display: block;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  background-color: #f5f5f5;
-  color: #616161;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-text-stroke: 1px transparent;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-overflow-scrolling: touch;
-}
 
+* { box-sizing: border-box; }
 /*
   -------------------------------------------------------------------------------
   #CONTAINER
@@ -347,7 +333,7 @@ html {
     background-position: center center;
     background-attachment: fixed;
     background-color: transparent;
-    margin-top: 100px;
+    margin-top: 150px;
     align-items: center;
 
     .btn {
@@ -367,15 +353,89 @@ html {
       }
     }
 
-    .center {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, 115%);
+    .timeline-titre {
+      position: relative;
+      display: block;
+      margin: auto;
+      text-align: center;
     }
 
+    .timeline {               /*Parametres generaux de la timeline*/
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      margin-top: 50px;
+      padding: 40px 60px;
+      background: transparent;
+      color: gainsboro;
+    }
+
+    .timeline:after {        /*Parametres de la bare centrale*/
+      content: "";
+      position: absolute;
+      top: 20px;
+      bottom: 20px;
+      left: 50%;
+      width: 8px;
+      background: orange;
+      border-radius: 2px;
+      z-index: 1;
+    }
+
+    .timeline article {       /*Parametres des elements*/
+      position: relative;
+      background: dimgray;
+      width: calc( 50% - 40px );
+      padding: 20px;
+      border-radius: 2px;
+    }
+
+    .timeline article + article { /*Pour separer les elements*/
+      margin-top: 20px;
+    }
+
+    .timeline article:before { /*Pour creer les ronds sur la bare*/
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: calc( 100% + 26px );
+      background: dimgray;
+      width: 24px;
+      height: 24px;
+      border: 6px orange solid;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .timeline article:after { /*La fleche*/
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-left: 16px solid dimgray;
+      border-bottom: 20px solid transparent;
+    }
+
+    .timeline article:nth-child(even) { /*Pour mettre 1 element sur deux a droite*/
+      margin-left: calc( 50% + 48px );
+    }
+
+    .timeline article:nth-child(even):before { /*Pour replacer le rond*/
+      left: auto;
+      right: calc( 100% + 26px );
+    }
+
+    .timeline article:nth-child(even):after { /*Pour replacer la fleche*/
+      left: auto; 
+      right: 100%;
+      border-left: none;
+      border-right: 16px solid dimgray;
+    }
   }
 
 }
