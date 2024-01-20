@@ -257,6 +257,11 @@ html {
           /*first link at max width 767*/
           margin-left: 0;
         }
+        .a-in{
+          object-position: center;
+          max-width: 49px;
+          max-height: 49px;
+        }
       }
 
       .info-headings {
@@ -323,8 +328,8 @@ html {
 
   .logo-in {
     display: block;
-    max-width: 10%;
-    max-height: 10%;
+    max-width: 5%;
+    max-height: 5%;
     margin: auto;
   }
 }
@@ -343,31 +348,34 @@ html {
     background-attachment: fixed;
     background-color: transparent;
     margin-top: 100px;
+    align-items: center;
 
-    .btn-a-propos {
-      /*about buttons*/
-      height: auto;
-      margin-right: auto;
+    .btn {
+      display: inline-block;
       margin-left: auto;
-      animation-delay: 1s;
+      margin-right: auto;
+      margin-top: 20px;
       text-align: center;
-      .btn {
-        /*button style*/
-        margin: 20px 20px;
-        margin-right: auto;
-        margin-left: auto;
-        background: orange;
-        color: #ffffff;
-        width: 180px;
-        border-radius: 2px;
-        margin-top: 200px;
-
-        &:hover {
-         /*hover effect*/
-          background: orangered;
-        }
+      text-decoration: none;
+      background: orange;
+      color: #ffffff;
+      border-radius: 2px;
+      padding: 8px 40px;
+      transform: translate(280%);
+      &:hover {
+        background: orangered;
       }
     }
+
+    .center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, 115%);
+    }
+
   }
 
 }
