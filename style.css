@@ -63,7 +63,7 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 370px;
+    height: 400px;
     background: url("./images/background.png") no-repeat;
     background-size: cover;
     background-position: center center;
@@ -353,11 +353,13 @@
       }
     }
 
-    .timeline-titre {
+    .titre {
       position: relative;
       display: block;
       margin: auto;
       text-align: center;
+      color: dimgray;
+      list-style-type: none;
     }
 
     .timeline {               /*Parametres generaux de la timeline*/
@@ -365,7 +367,6 @@
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
-      margin-top: 50px;
       padding: 40px 60px;
       background: transparent;
       color: gainsboro;
